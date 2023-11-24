@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meme Maker</title>
+    <link rel ="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="color-options"> 
+        <input type="color" id="color"/>
+        <div class ="color-option" style="background-color: #fc5c65" data-color ="#fc5c65"></div>
+    <div class ="color-option" style="background-color: #fd9644" data-color ="#fd9644"></div>
+    <div class ="color-option" style="background-color: #fed330" data-color ="#fed330"></div>
+    <div class ="color-option" style="background-color: #26de81" data-color ="#26de81"></div>
+    <div class ="color-option" style="background-color: #2bcbba" data-color ="#2bcbba"></div>
+    <div class ="color-option" style="background-color: #eb3b5a" data-color ="#eb3b5a"></div>
+    <div class ="color-option" style="background-color: #fa8231" data-color ="#fa8231"></div>
+    <div class ="color-option" style="background-color: #f7b731" data-color ="#f7b731"></div>
+    <div class ="color-option" style="background-color: #20bf6b" data-color ="#20bf6b"></div>
+    <div class ="color-option" style="background-color: #45aaf2" data-color ="#45aaf2"></div>
+    <div class ="color-option" style="background-color: #4b7bec" data-color ="#4b7bec"></div>
+    <div class ="color-option" style="background-color: #a55eea" data-color ="#a55eea"></div>
+    </div>
+    <canvas></canvas>
+    <div class="btns">
+        <button id="mode-btn">🎨DRAW</button>
+        <input id="line-width" type="range" min="1" max="10" 
+        value="5" step="0.5"/>
+        <button id="destory-btn">🗑️RESET</button>
+        <button id="eraser-btn">🧼ERASER</button>
+        <label for="file">
+            📸ADD PHOTO
+            <input type="file" accept="image/*" id ="file"/>
+        </label>
+        <input type="text" placeholder="ADD TEXT" id="text"/>
+        <input id="text-weight" type="range" min="1" max="100" 
+        step="1"value="20"/>
+        <button id="fontstroke-btn">⬛TEXT</button>
+        <select id="fontStyle" name="fontStyle" size="1">
+            <option value="Serif">Serif</option>
+            <option value="Arial">Arial</option>
+            <option value="CourierNew">CourierNew</option>
+            <option value="Georgia">Georgia</option>
+            <option value="TimesNewRoman">TimesNewRoman</option>
+            <option value="TrebuchetMS">TrebuchetMS</option>
+            <option value="Verdana">Verdana</option>
+        </select>
+        <button id="save">💾SAVE</button>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
