@@ -103,7 +103,7 @@ function onDestoryClick(){
 function onEraserclick(){
     ctx.strokeStyle = "white";
     isFilling = false;
-    modeBtn.innerText = "Fill";
+    modeBtn.innerText = "🎨Draw";
 }
 
 function onFileChange(event){
