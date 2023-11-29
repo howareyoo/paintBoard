@@ -31,13 +31,16 @@ let fontStyleValue = "Serif";
 
 
 
+
 function onMove(event){
 
     if(isFilling){
+        console.log("isFilling");
         return;
     }
     
     if(isPainting){
+        console.log("isPainting");
         ctx.lineTo(event.offsetX, event.offsetY);
         ctx.stroke();
         return;
@@ -45,15 +48,19 @@ function onMove(event){
     ctx.beginPath();
 
     ctx.moveTo(event.offsetX, event.offsetY);
+
+
 }
 
 
 function onMouseDown(){
     isPainting = true;
+    console.log("onMouseDown")
 }
 
 function cancelPainting(){
     isPainting = false;
+    console.log("cancelPainting")
 }
 
 
@@ -121,20 +128,23 @@ function onFileChange(event){
 function onDoubleClick(event){
 
     const text = textInput.value;
-    
+   
     if(text !== ""){
         ctx.save();
         ctx.lineWidth = 1;
         ctx.font = `${textWeightValue}px ${fontStyleValue}`;
-        console.log('Font size set to:', textWeightValue);
         if(isStroke){
             ctx.strokeText(text, event.offsetX, event.offsetY);
         }else{
             ctx.fillText(text, event.offsetX, event.offsetY);
         }
-        
         ctx.restore();
+    }else{
+        
+        alert("텍스트를 입력 해 주세요.");
     }
+
+    window.getSelection().removeAllRanges()
   
 }
 
@@ -185,33 +195,4 @@ saveBtn.addEventListener("click", onSaveClick);
 textWeight.addEventListener("change", onTextChange);
 dropDown.addEventListener("change", onDropDownChange);
 fontstrokeBtn.addEventListener("click", onStrokeClick);
-
-
-
-// ctx.moveTo(0, 0);
-
-// const colors = [
-
-//     "#1abc9c",
-//     "#2ecc71",
-//     "#3498db",
-//     "#9b59b6",
-//     "#34495e",
-//     "#16a085",
-//     "#27ae60",
-//     "#2980b9",
-//     "#f1c40f",
-// ];
-
-
-// function onClick(event){
-//     ctx.beginPath();
-//     ctx.moveTo(0, 0);
-//     const color = colors[Math.floor(Math.random() * colors.length)]
-//     ctx.strokeStyle = color;
-//     ctx.lineTo(event.offsetX, event.offsetY);
-//     ctx.stroke();
-// }
-
-// canvas.addEventListener("mousemove", onClick);
 
